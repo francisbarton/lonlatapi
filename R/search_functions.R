@@ -24,7 +24,9 @@ get_rgn <- function(...) {
     region <- regions |>
       sf::st_filter(pt, .predicate = sf::st_contains) |>
       dplyr::pull(all_of("rgn21nm"))
-  } else region <- country
+  } else {
+    region <- country
+  }
 
   list(region = region, pt = pt)
 }

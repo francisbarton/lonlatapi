@@ -42,11 +42,11 @@
     expect_named(country_list)
 
     check <- country_list |>
-      purrr::map_lgl(\(x) sf::st_contains(x, pt, sparse = FALSE)[1,1])
+      purrr::map_lgl(\(x) sf::st_contains(x, pt, sparse = FALSE)[1, 1])
 
     expect_vector(check, logical(), length(country_list))
 
-    check_cont <- \(x, pt) sf::st_contains(x, pt, sparse = FALSE)[1,1]
+    check_cont <- \(x, pt) sf::st_contains(x, pt, sparse = FALSE)[1, 1]
 
     check_tbl <- countries |>
       dplyr::mutate(contains_pt = check_cont(geometry, pt))
@@ -73,13 +73,11 @@
     expect_identical(ctry_name, sf::st_drop_geometry(ctry_name))
 
     expect_equal(ctry_name, "England")
-
   })
 
 
 "country query returns a name" |>
   test_that({
-
     # just some random point (oh hello Middlesbrough!)
     lon <- -1.234
     lat <- 54.567
@@ -91,7 +89,6 @@
 
 "region query returns a name" |>
   test_that({
-
     # just some random point (oh hello Middlesbrough!)
     lon <- -1.234
     lat <- 54.567

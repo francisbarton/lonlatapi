@@ -3,7 +3,7 @@
 #' Pass in either an OA code or a pair of longitude and latitude values
 #'
 #' @param oacd character. The ONS code for a Census OA (output area). For
-#' example, "E00174111"
+#'  example, "E00174111"
 #' @inheritParams find_oa
 #' @returns A tibble with 28 (expected) columns giving wider geographical data
 #'  for the selected location
