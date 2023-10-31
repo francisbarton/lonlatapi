@@ -4,22 +4,30 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of lonlatapi is to ...
+**{lonlatapi}** finds OA (Census output area) data from longitude and latitude data
 
 ## Installation
 
 You can install the development version of lonlatapi like so:
 
 ``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+devtools::install_github("francisbarton/lonlatapi")
+
 ```
 
-## Example
+## Examples
 
-This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(lonlatapi)
-## basic example code
+
+find_oa(lon = -1.234, lat = 54.567)
+get_full_oa_data(lon = -1.234, lat = 54.567)
+
 ```
 
+``` r
+oacd <- find_oa(lon = -1.234, lat = 54.567)
+get_full_oa_data(oacd)
+
+```
