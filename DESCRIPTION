@@ -1,0 +1,24 @@
+Package: lonlatapi
+Title: An API to return OA (Census output area) data for a given UK point location
+Version: 0.0.1
+Authors@R: 
+    person("Fran", "Barton", , "fbarton@alwaysdata.net", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0002-5650-1176"))
+Description: Finds OA (Census output area) data from longitude and latitude data.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    assertthat,
+    boundr,
+    dplyr,
+    glue,
+    purrr,
+    rlang,
+    sf,
+    utils
+Suggests: 
+    testthat,
+    tibble,
+    tidyr
