@@ -22,3 +22,5 @@ Suggests:
     testthat,
     tibble,
     tidyr
+URL: https://github.com/francisbarton/lonlatapi
+BugReports: https://github.com/francisbarton/lonlatapi/issues
