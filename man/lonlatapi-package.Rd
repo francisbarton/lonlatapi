@@ -8,6 +8,14 @@
 \description{
 Finds OA (Census output area) data from longitude and latitude data.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/francisbarton/lonlatapi}
+  \item Report bugs at \url{https://github.com/francisbarton/lonlatapi/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Fran Barton \email{fbarton@alwaysdata.net} (\href{https://orcid.org/0000-0002-5650-1176}{ORCID})
 
