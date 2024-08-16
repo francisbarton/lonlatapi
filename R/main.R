@@ -21,9 +21,7 @@ get_full_oa_data <- function(oacd = NULL, lon = NULL, lat = NULL) {
     purrr::reduce(dplyr::left_join)
 
   get_max_names <- function(tbl, prefix, n = 2) {
-    nms <- grep(glue::glue("^{prefix}"), names(tbl), value = TRUE) |>
-      sort() |>
-      utils::tail(n)
+    sort(grep(glue("^{prefix}"), names(tbl), value = TRUE), TRUE)[seq(n)]
   }
 
   keep_names <- c(
@@ -57,7 +55,7 @@ get_full_oa_data <- function(oacd = NULL, lon = NULL, lat = NULL) {
 #'  For example, "E00174111"
 #' @export
 find_oa <- function(lon, lat) {
-  pluck_oa <- function(x) purrr::pluck(x, "oa")
+  pluck_oa <- \(x) purrr::pluck(x, "oa")
   purrr::compose(
     pluck_oa, get_oa, get_lsoa, get_msoa, get_lad, get_rgn, get_ctry
   )(lon, lat)
