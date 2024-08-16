@@ -4,7 +4,7 @@ get_ctry <- function(lon, lat) {
   pt <- create_sf_point(lon, lat)
   country <- countries |>
     sf::st_filter(pt, .predicate = sf::st_contains) |>
-    dplyr::pull(all_of("ctry21nm"))
+    dplyr::pull("ctry21nm")
 
   list(country = country, pt = pt)
 }
@@ -23,7 +23,7 @@ get_rgn <- function(...) {
 
     region <- regions |>
       sf::st_filter(pt, .predicate = sf::st_contains) |>
-      dplyr::pull(all_of("rgn21nm"))
+      dplyr::pull("rgn21nm")
   } else {
     region <- country
   }
@@ -45,7 +45,7 @@ get_lad <- function(...) {
   pt <- process_point(!!!args)
   lad <- lads |>
     sf::st_filter(pt, .predicate = sf::st_contains) |>
-    dplyr::pull(all_of("lad23nm"))
+    dplyr::pull("lad23nm")
 
   list(lad = lad, pt = pt)
 }
@@ -61,7 +61,7 @@ get_msoa <- function(...) {
   pt <- process_point(!!!args)
   msoa <- msoas |>
     sf::st_filter(pt, .predicate = sf::st_contains) |>
-    dplyr::pull(all_of("msoa21nm"))
+    dplyr::pull("msoa21nm")
 
   list(msoa = msoa, pt = pt)
 }
@@ -78,7 +78,7 @@ get_lsoa <- function(...) {
   pt <- process_point(!!!args)
   lsoa <- lsoas |>
     sf::st_filter(pt, .predicate = sf::st_contains) |>
-    dplyr::pull(all_of("lsoa21nm"))
+    dplyr::pull("lsoa21nm")
 
   list(lsoa = lsoa, pt = pt)
 }
@@ -95,7 +95,7 @@ get_oa <- function(...) {
   pt <- process_point(!!!args)
   oa <- oas |>
     sf::st_filter(pt, .predicate = sf::st_contains) |>
-    dplyr::pull(all_of("oa21cd"))
+    dplyr::pull("oa21cd")
 
   list(oa = oa, pt = pt)
 }
